@@ -1,0 +1,171 @@
+==========
+base
+==========
+
+// Test
+
+version = '1.0.1'
+myCopyTask.description = 'Copies some files'
+
+file("$buildDir/classes")
+
+println "Destination: ${myCopyTask.destinationDir}"
+
+---
+(source_file
+  (comment)
+  (command
+    (unit
+      (identifier))
+    (operators)
+    (string))
+  (command
+    (unit
+      (identifier)
+      (identifier))
+    (operators)
+    (string))
+  (command
+    (unit
+      (identifier)
+      (arg_block
+        (string))))
+  (command
+    (unit
+      (identifier))
+    (string)))
+
+========
+list
+======
+
+a.b.c([])
+
+---
+(source_file
+  (command
+    (unit
+      (identifier)
+      (identifier)
+      (identifier)
+      (arg_block
+        (list)))))
+
+========
+method
+==========
+
+
+myCopyTask.include '**/*.xml', '**/*.properties'
+
+ext.resourceSpec = copySpec()   // `copySpec()` comes from `Project`
+
+file('src/main/java')
+println 'Hello, World!'
+
+---
+(source_file
+  (command
+    (unit
+      (identifier)
+      (identifier))
+    (string)
+    (arg_spliter)
+    (string))
+  (command
+    (unit
+      (identifier)
+      (identifier))
+    (operators)
+    (unit
+      (identifier)
+      (arg_block))
+    (comment))
+  (command
+    (unit
+      (identifier)
+      (arg_block
+        (string))))
+  (command
+    (unit
+      (identifier))
+    (string)))
+
+======
+bock
+======
+
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "PopandPip"
+include ':app'
+
+---
+
+(source_file
+  (command
+    (block
+      (unit
+        (identifier))
+      (command
+        (block
+          (unit
+            (identifier))
+          (command
+            (unit
+              (identifier)
+              (arg_block)))
+          (command
+            (unit
+              (identifier)
+              (arg_block)))
+          (command
+            (unit
+              (identifier)
+              (arg_block)))))))
+  (command
+    (block
+      (unit
+        (identifier))
+      (command
+        (unit
+          (identifier)
+          (identifier)
+          (arg_block
+            (unit
+              (identifier)
+              (identifier)))))
+      (command
+        (block
+          (unit
+            (identifier))
+          (command
+            (unit
+              (identifier)
+              (arg_block)))
+          (command
+            (unit
+              (identifier)
+              (arg_block)))))))
+  (command
+        (unit
+          (identifier)
+          (identifier))
+        (operators)
+        (string))
+      (command
+        (unit
+          (identifier))
+        (string)))

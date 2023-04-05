@@ -1,0 +1,22 @@
+{
+  "name": "tree-sitter-groovyscript",
+  "version": "1.0.0",
+  "description": "A tree-sitter for groovy dsl",
+  "main": "bindings/node",
+  "scripts": {
+    "lint": "prettier --check grammar.js",
+    "format": "prettier --write grammar.js",
+    "build": "tree-sitter generate",
+    "test": "tree-sitter test"
+  },
+  "keywords": [],
+  "author": "Decodetalkers",
+  "license": "MIT",
+  "dependencies": {
+    "nan": "^2.16.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.6",
+    "prettier": "^2.7.1"
+  }
+}

@@ -23,3 +23,5 @@
 (comment) @comment
 
 (operators) @operator
+
+["(" ")" "[" "]" "{" "}"]  @punctuation.bracket

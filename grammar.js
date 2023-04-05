@@ -21,7 +21,7 @@ module.exports = grammar({
     // ---- split the args -----
     arg_spliter: ($) => ",",
     // ---- operators ---------
-    operators: ($) => "=",
+    operators: ($) => choice("+=", "=", "-=", "+", "-"),
     // ----- unit ----------------
     unit: ($) => seq($._unit, repeat(seq(".", $._unit))),
 

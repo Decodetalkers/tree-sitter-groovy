@@ -136,6 +136,11 @@
     }
   },
   {
+    "type": "operators",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "source_file",
     "named": true,
     "fields": {},
@@ -205,7 +210,27 @@
     "named": false
   },
   {
+    "type": "+",
+    "named": false
+  },
+  {
+    "type": "+=",
+    "named": false
+  },
+  {
+    "type": "-",
+    "named": false
+  },
+  {
+    "type": "-=",
+    "named": false
+  },
+  {
     "type": ".",
+    "named": false
+  },
+  {
+    "type": "=",
     "named": false
   },
   {
@@ -234,10 +259,6 @@
   },
   {
     "type": "number",
-    "named": true
-  },
-  {
-    "type": "operators",
     "named": true
   },
   {

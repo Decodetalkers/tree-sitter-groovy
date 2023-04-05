@@ -20,7 +20,7 @@ jobs:
       - name: Install Dependencies
         run: |
           npm install
-          npm run generate
+          npm run build
       - name: Run lint
         run: |
           npm run lint

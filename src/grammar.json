@@ -85,6 +85,10 @@
       "type": "STRING",
       "value": ","
     },
+    "leading_key": {
+      "type": "STRING",
+      "value": "$"
+    },
     "operators": {
       "type": "CHOICE",
       "members": [
@@ -262,8 +266,8 @@
                         "type": "SEQ",
                         "members": [
                           {
-                            "type": "STRING",
-                            "value": "$"
+                            "type": "SYMBOL",
+                            "name": "leading_key"
                           },
                           {
                             "type": "CHOICE",

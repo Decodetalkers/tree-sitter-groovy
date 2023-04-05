@@ -180,6 +180,10 @@
           "named": true
         },
         {
+          "type": "leading_key",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -227,10 +231,6 @@
   },
   {
     "type": "\"",
-    "named": false
-  },
-  {
-    "type": "$",
     "named": false
   },
   {
@@ -291,6 +291,10 @@
   },
   {
     "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "leading_key",
     "named": true
   },
   {

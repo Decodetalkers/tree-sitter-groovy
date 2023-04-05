@@ -2,6 +2,10 @@
 
 ## Note it is for Groovy dsl ,gradle script , not groovy
 
+## Note: source of c is not under master branch
+
+it is depoled to `gh-pages` branch, as what tree-sitter-sql done
+
 ## Grammar
 
 Groovy Dsl part is under:

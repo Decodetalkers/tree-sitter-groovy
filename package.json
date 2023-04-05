@@ -11,6 +11,7 @@
   },
   "keywords": [],
   "author": "Decodetalkers",
+  "gypfile": true,
   "license": "MIT",
   "dependencies": {
     "nan": "^2.16.0"

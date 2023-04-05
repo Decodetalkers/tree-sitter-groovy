@@ -2,7 +2,7 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   jekyll:
@@ -14,7 +14,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm install && npm build
+      - run: |
+          npm install
+          npm build
       - name: Publish parser on GitHub Pages
         run: cp -r src docs
       - name: 🚀 deploy

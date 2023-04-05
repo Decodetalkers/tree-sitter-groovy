@@ -20,6 +20,7 @@ module.exports = grammar({
       ),
     // ---- split the args -----
     arg_spliter: ($) => ",",
+    leading_key: ($) => "$",
     // ---- operators ---------
     operators: ($) => choice("+=", "=", "-=", "+", "-"),
     // ----- unit ----------------
@@ -47,7 +48,7 @@ module.exports = grammar({
               choice(
                 token.immediate(prec(1, /[^"\\^$]+/)),
                 $.escape_sequence,
-                seq("$", choice($.identifier, seq("{", $._command_unit, "}")))
+                seq($.leading_key, choice($.identifier, seq("{", $._command_unit, "}")))
               )
             )
           ),

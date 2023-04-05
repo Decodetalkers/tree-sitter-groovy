@@ -29,5 +29,6 @@
 (comment) @comment
 
 (operators) @operator
+(leading_key) @operator
 
 ["(" ")" "[" "]" "{" "}"]  @punctuation.bracket

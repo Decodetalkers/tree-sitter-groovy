@@ -30,11 +30,13 @@ println "Destination: ${myCopyTask.destinationDir}"
       (identifier)
       (arg_block
         (string
+				  (leading_key)
           (identifier)))))
   (command
         (unit
           (identifier))
         (string
+				  (leading_key)
           (unit
             (identifier)
             (identifier)))))

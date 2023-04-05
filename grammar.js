@@ -9,7 +9,15 @@ module.exports = grammar({
     block: ($) => seq($._command_unit, "{", repeat($.command), "}"),
     command: ($) => seq(repeat1($._command_unit), "\n"),
     _command_unit: ($) =>
-      choice($.list, $.unit, $.operators, $.string, $.number, $.arg_spliter, $.block),
+      choice(
+        $.list,
+        $.unit,
+        $.operators,
+        $.string,
+        $.number,
+        $.arg_spliter,
+        $.block
+      ),
     // ---- split the args -----
     arg_spliter: ($) => ",",
     // ---- operators ---------
@@ -85,7 +93,11 @@ module.exports = grammar({
 
       const decimal_integer_literal = choice(
         "0",
-        seq(optional("0"), /[1-9]/, optional(seq(optional("_"), decimal_digits)))
+        seq(
+          optional("0"),
+          /[1-9]/,
+          optional(seq(optional("_"), decimal_digits))
+        )
       );
 
       const decimal_literal = choice(

@@ -48,7 +48,10 @@ module.exports = grammar({
               choice(
                 token.immediate(prec(1, /[^"\\^$]+/)),
                 $.escape_sequence,
-                seq($.leading_key, choice($.identifier, seq("{", $._command_unit, "}")))
+                seq(
+                  $.leading_key,
+                  choice($.identifier, seq("{", $._command_unit, "}"))
+                )
               )
             )
           ),

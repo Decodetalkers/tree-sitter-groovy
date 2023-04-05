@@ -16,7 +16,7 @@ jobs:
           node-version: 18
       - run: |
           npm install
-          npm build
+          npm run build
       - name: Publish parser on GitHub Pages
         run: cp -r src docs
       - name: 🚀 deploy

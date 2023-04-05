@@ -1,6 +1,12 @@
 (unit
 	(identifier) @variable)
 
+(string
+	(identifier) @variable)
+
+(escape_sequence) @string.escape
+
+
 (block
 	(unit
 		(identifier) @namespace

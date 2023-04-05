@@ -29,11 +29,15 @@ println "Destination: ${myCopyTask.destinationDir}"
     (unit
       (identifier)
       (arg_block
-        (string))))
+        (string
+          (identifier)))))
   (command
-    (unit
-      (identifier))
-    (string)))
+        (unit
+          (identifier))
+        (string
+          (unit
+            (identifier)
+            (identifier)))))
 
 ========
 list

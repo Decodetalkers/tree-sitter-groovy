@@ -35,7 +35,7 @@ module.exports = grammar({
           "'",
           optional(
             repeat(
-              choice(token.immediate(prec(1, /[^'\\^@]+/)), $.escape_sequence)
+              choice(token.immediate(prec(1, /[^'\\]+/)), $.escape_sequence)
             )
           ),
           "'"
@@ -44,7 +44,11 @@ module.exports = grammar({
           '"',
           optional(
             repeat(
-              choice(token.immediate(prec(1, /[^"\\^@]+/)), $.escape_sequence)
+              choice(
+                token.immediate(prec(1, /[^"\\^$]+/)),
+                $.escape_sequence,
+                seq("$", choice($.identifier, seq("{", $._command_unit, "}")))
+              )
             )
           ),
           '"'

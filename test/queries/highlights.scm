@@ -13,6 +13,10 @@
 	)
 )
 
+(func
+	(identifier) @function
+)
+
 (number) @number
 
 ((identifier) @boolean

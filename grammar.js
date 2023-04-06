@@ -20,13 +20,17 @@ module.exports = grammar({
       ),
     // ---- split the args -----
     arg_spliter: ($) => ",",
+    // ---- leading_key -----
     leading_key: ($) => "$",
     // ---- operators ---------
     operators: ($) => choice("+=", "=", "-=", "+", "-"),
+
     // ----- unit ----------------
     unit: ($) => seq($._unit, repeat(seq(".", $._unit))),
 
-    _unit: ($) => seq($.identifier, optional($.arg_block)),
+    _unit: ($) => choice($.identifier, $.func),
+
+    func: ($) => seq($.identifier, $.arg_block),
 
     arg_block: ($) => seq("(", optional($._args), ")"),
     // ------------ string -------------

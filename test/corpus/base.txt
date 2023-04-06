@@ -27,19 +27,20 @@ println "Destination: ${myCopyTask.destinationDir}"
     (string))
   (command
     (unit
-      (identifier)
-      (arg_block
-        (string
-          (leading_key)
-          (identifier)))))
+      (func
+        (identifier)
+        (arg_block
+          (string
+            (leading_key)
+            (identifier))))))
   (command
-        (unit
-          (identifier))
-        (string
-          (leading_key)
-          (unit
-            (identifier)
-            (identifier)))))
+    (unit
+      (identifier))
+    (string
+      (leading_key)
+      (unit
+        (identifier)
+        (identifier)))))
 
 ========
 list
@@ -53,9 +54,10 @@ a.b.c([])
     (unit
       (identifier)
       (identifier)
-      (identifier)
-      (arg_block
-        (list)))))
+      (func
+        (identifier)
+        (arg_block
+          (list))))))
 
 ========
 method
@@ -84,14 +86,16 @@ println 'Hello, World!'
       (identifier))
     (operators)
     (unit
-      (identifier)
-      (arg_block))
+      (func
+        (identifier)
+        (arg_block)))
     (comment))
   (command
     (unit
-      (identifier)
-      (arg_block
-        (string))))
+      (func
+        (identifier)
+        (arg_block
+          (string)))))
   (command
     (unit
       (identifier))
@@ -131,16 +135,19 @@ include ':app'
             (identifier))
           (command
             (unit
-              (identifier)
-              (arg_block)))
+              (func
+                (identifier)
+                (arg_block))))
           (command
             (unit
-              (identifier)
-              (arg_block)))
+              (func
+                (identifier)
+                (arg_block))))
           (command
             (unit
-              (identifier)
-              (arg_block)))))))
+              (func
+                (identifier)
+                (arg_block))))))))
   (command
     (block
       (unit
@@ -148,30 +155,33 @@ include ':app'
       (command
         (unit
           (identifier)
-          (identifier)
-          (arg_block
-            (unit
-              (identifier)
-              (identifier)))))
+          (func
+            (identifier)
+            (arg_block
+              (unit
+                (identifier)
+                (identifier))))))
       (command
         (block
           (unit
             (identifier))
           (command
             (unit
-              (identifier)
-              (arg_block)))
+              (func
+                (identifier)
+                (arg_block))))
           (command
             (unit
-              (identifier)
-              (arg_block)))))))
+              (func
+                (identifier)
+                (arg_block))))))))
   (command
-        (unit
-          (identifier)
-          (identifier))
-        (operators)
-        (string))
-      (command
-        (unit
-          (identifier))
-        (string)))
+    (unit
+      (identifier)
+      (identifier))
+    (operators)
+    (string))
+  (command
+    (unit
+      (identifier))
+    (string)))

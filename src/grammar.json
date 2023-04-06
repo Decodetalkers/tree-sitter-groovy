@@ -1,5 +1,5 @@
 {
-  "name": "groovyscript",
+  "name": "groovy",
   "rules": {
     "source_file": {
       "type": "REPEAT",
@@ -43,8 +43,17 @@
           }
         },
         {
-          "type": "STRING",
-          "value": "\n"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "\n"
+            },
+            {
+              "type": "STRING",
+              "value": ";"
+            }
+          ]
         }
       ]
     },
@@ -111,6 +120,14 @@
         {
           "type": "STRING",
           "value": "-"
+        },
+        {
+          "type": "STRING",
+          "value": "~"
+        },
+        {
+          "type": "STRING",
+          "value": "->"
         }
       ]
     },
@@ -131,8 +148,17 @@
                 "value": "."
               },
               {
-                "type": "SYMBOL",
-                "name": "_unit"
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "_unit"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "string"
+                  }
+                ]
               }
             ]
           }
@@ -369,8 +395,16 @@
             "type": "SEQ",
             "members": [
               {
-                "type": "SYMBOL",
-                "name": "arg_spliter"
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SYMBOL",
+                    "name": "arg_spliter"
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
               },
               {
                 "type": "CHOICE",

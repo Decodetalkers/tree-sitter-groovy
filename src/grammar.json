@@ -140,6 +140,19 @@
       ]
     },
     "_unit": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "identifier"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "func"
+        }
+      ]
+    },
+    "func": {
       "type": "SEQ",
       "members": [
         {
@@ -147,16 +160,8 @@
           "name": "identifier"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "arg_block"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "arg_block"
         }
       ]
     },

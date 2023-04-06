@@ -109,6 +109,25 @@
     }
   },
   {
+    "type": "func",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "arg_block",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "list",
     "named": true,
     "fields": {},
@@ -215,7 +234,7 @@
       "required": true,
       "types": [
         {
-          "type": "arg_block",
+          "type": "func",
           "named": true
         },
         {

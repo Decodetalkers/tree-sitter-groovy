@@ -1,6 +1,6 @@
 //const base = require('./grammar/base');
 module.exports = grammar({
-  name: "groovyscript",
+  name: "groovy",
   extras: ($) => [$.comment, /\s/],
 
   rules: {

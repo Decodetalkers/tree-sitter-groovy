@@ -1,5 +1,5 @@
 {
-  "name": "tree-sitter-groovyscript",
+  "name": "tree-sitter-groovy",
   "version": "1.0.0",
   "description": "A tree-sitter for groovy dsl",
   "main": "bindings/node",

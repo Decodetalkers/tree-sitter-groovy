@@ -42,9 +42,9 @@ http.request( GET, TEXT ) {
    headers.Accept = 'application/json'
    headers.'User-Agent' = USER_AGENT
 	
-   response.success = { 
-      res, rd ->  
-      def jsonText = rd.text 
+   response.success = {
+      res, rd ->
+      def jsonText = rd.text
 		
       //Setting the parser type to JsonParserLax
       def parser = new JsonSlurper().setType(JsonParserType.LAX)
@@ -54,8 +54,8 @@ http.request( GET, TEXT ) {
 
 class Example { 
    static void main(String[] args) { 
-      Date date = new Date(); 
-      
+      Date date = new Date();
+
       // display time and date using toString() 
       System.out.println(date.toString()); 
    } 
@@ -77,5 +77,14 @@ class Example {
 	
    static void main(String[] args) {
       DisplayName();
+   }
+}
+
+import java.io.File 
+class Example { 
+   static void main(String[] args) { 
+      new File("E:/Example.txt").eachLine {  
+         line -> println "line : $line"; 
+      } 
    } 
 }

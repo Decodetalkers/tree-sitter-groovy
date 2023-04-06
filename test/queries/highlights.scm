@@ -1,11 +1,9 @@
 (unit
 	(identifier) @variable)
-
 (string
 	(identifier) @variable)
 
 (escape_sequence) @string.escape
-
 
 (block
 	(unit
@@ -23,10 +21,27 @@
   (#any-of? @boolean "true" "false" "True" "False"))
 
 ((identifier) @type.definition
-  (#any-of? @type.definition "string" "id" "version" "apply"))
+  (#any-of? @type.definition
+    "string"
+		"String"
+		"void"
+    "id"
+    "version"
+    "apply"
+    "implementation"
+    "testImplementation"
+    "androidTestImplementation"
+    "debugImplementation")
+)
 
 ((identifier) @keyword
-  (#any-of? @keyword "def"))
+  (#any-of? @keyword
+    "static"
+		"class"
+		"def"
+		"import"
+		"new"
+))
 
 (string) @string
 

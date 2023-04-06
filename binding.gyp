@@ -1,7 +1,7 @@
 {
   "targets": [
     {
-      "target_name": "tree_sitter_groovyscript_binding",
+      "target_name": "tree_sitter_groovy_binding",
       "include_dirs": [
         "<!(node -e \"require('nan')\")",
         "src"

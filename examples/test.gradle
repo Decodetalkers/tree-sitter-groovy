@@ -1,0 +1,90 @@
+class Example { 
+   static void main(String[] args) { 
+      // Example of an Integer using def 
+      def a = 100; 
+      println(a); 
+		
+      // Example of an float using def 
+      def b = 100.10; 
+      println(b); 
+		
+      // Example of an Double using def 
+      def c = 100.101; 
+      println(c);
+		
+      // Example of an String using def 
+      def d = "HelloWorld"; 
+      println(d); 
+   } 
+} 
+
+class Example { 
+   static void main(String[] args) { 
+      // Example of an Integer using def 
+      def aint = 100;
+      println(aint);
+		
+      // Example of an float using def 
+      def bfloat = 100.10; 
+      println(bfloat); 
+		
+      // Example of an Double using def 
+      def cDouble = 100.101; 
+      println(cDouble);
+		
+      // Example of an String using def 
+      def dString = "HelloWorld"; 
+      println(dString); 
+   } 
+}
+
+http.request( GET, TEXT ) {
+   headers.Accept = 'application/json'
+   headers.'User-Agent' = USER_AGENT
+	
+   response.success = {
+      res, rd ->
+      def jsonText = rd.text
+		
+      //Setting the parser type to JsonParserLax
+      def parser = new JsonSlurper().setType(JsonParserType.LAX)
+      def jsonResp = parser.parseText(jsonText)
+   }
+}
+
+class Example { 
+   static void main(String[] args) { 
+      Date date = new Date();
+
+      // display time and date using toString() 
+      System.out.println(date.toString()); 
+   } 
+}
+
+def regex = ~'Groovy'
+
+'Groovy' =~ 'Groovy' 
+'Groovy' =~ 'oo' 
+'Groovy' ==~ 'Groovy' 
+'Groovy' ==~ 'oo' 
+'Groovy' =~ '∧G' 
+
+class Example {
+   static def DisplayName() {
+      println("This is how methods work in groovy");
+      println("This is an example of a simple method");
+   } 
+	
+   static void main(String[] args) {
+      DisplayName();
+   }
+}
+
+import java.io.File 
+class Example { 
+   static void main(String[] args) { 
+      new File("E:/Example.txt").eachLine {  
+         line -> println "line : $line"; 
+      } 
+   } 
+}

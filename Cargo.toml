@@ -1,6 +1,6 @@
 [package]
-name = "tree-sitter-groovyscript"
-description = "groovyscript grammar for the tree-sitter parsing library"
+name = "tree-sitter-groovy"
+description = "groovy grammar for the tree-sitter parsing library"
 version = "0.0.1"
 keywords = ["incremental", "parsing", "groovy"]
 categories = ["parsing", "text-editors"]

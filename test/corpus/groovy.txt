@@ -1,0 +1,107 @@
+========
+base class
+========
+class Example { 
+   static void main(String[] args) { 
+      // Example of an Integer using def 
+      def a = 100; 
+      println(a); 
+		
+      // Example of an float using def 
+      def b = 100.10; 
+      println(b); 
+		
+      // Example of an Double using def 
+      def c = 100.101; 
+      println(c);
+		
+      // Example of an String using def 
+      def d = "HelloWorld"; 
+      println(d); 
+   } 
+} 
+
+---
+
+(source_file
+  (command
+    (unit
+      (identifier))
+    (block
+      (unit
+        (identifier))
+      (command
+        (unit
+          (identifier))
+        (unit
+          (identifier))
+        (block
+          (unit
+            (func
+              (identifier)
+              (arg_block
+                (unit
+                  (identifier))
+                (list)
+                (unit
+                  (identifier)))))
+          (comment)
+          (command
+            (unit
+              (identifier))
+            (unit
+              (identifier))
+            (operators)
+            (number))
+          (command
+            (unit
+              (func
+                (identifier)
+                (arg_block
+                  (unit
+                    (identifier))))))
+          (comment)
+          (command
+            (unit
+              (identifier))
+            (unit
+              (identifier))
+                (operators)
+                (number))
+              (command
+                (unit
+                  (func
+                    (identifier)
+                    (arg_block
+                      (unit
+                        (identifier))))))
+              (comment)
+              (command
+                (unit
+                  (identifier))
+                (unit
+                  (identifier))
+                (operators)
+                (number))
+              (command
+                (unit
+                  (func
+                    (identifier)
+                    (arg_block
+                      (unit
+                        (identifier))))))
+              (comment)
+              (command
+                (unit
+                  (identifier))
+                (unit
+                  (identifier))
+                (operators)
+                (string))
+              (command
+                (unit
+                  (func
+                    (identifier)
+                    (arg_block
+                      (unit
+                        (identifier)))))))))))

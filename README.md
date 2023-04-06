@@ -1,6 +1,6 @@
 # Groovy Dsl treesitter
 
-## Note it is for Groovy dsl ,gradle script , not groovy
+## Most for gradle script under idea, also support groovy
 
 ## Note: source of c is not under master branch
 

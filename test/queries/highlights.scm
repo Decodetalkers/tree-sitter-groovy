@@ -20,6 +20,9 @@
 ((identifier) @boolean
   (#any-of? @boolean "true" "false" "True" "False"))
 
+((identifier) @constant
+  (#lua-match? @constant "^[A-Z][A-Z%d_]*$"))
+
 ((identifier) @type.definition
   (#any-of? @type.definition
     "string"

@@ -1,18 +1,18 @@
 (unit
-	(identifier) @variable)
+  (identifier) @variable)
 (string
-	(identifier) @variable)
+  (identifier) @variable)
 
 (escape_sequence) @string.escape
 
 (block
-	(unit
-		(identifier) @namespace
-	)
+  (unit
+    (identifier) @namespace
+  )
 )
 
 (func
-	(identifier) @function
+  (identifier) @function
 )
 
 (number) @number
@@ -26,8 +26,8 @@
 ((identifier) @type.definition
   (#any-of? @type.definition
     "string"
-		"String"
-		"void"
+    "String"
+    "void"
     "id"
     "version"
     "apply"
@@ -40,10 +40,10 @@
 ((identifier) @keyword
   (#any-of? @keyword
     "static"
-		"class"
-		"def"
-		"import"
-		"new"
+    "class"
+    "def"
+    "import"
+    "new"
 ))
 
 (string) @string

@@ -10,6 +10,7 @@ module.exports = grammar({
     command: ($) => seq(repeat1($._command_unit), choice("\n", ";")),
     _command_unit: ($) =>
       choice(
+        $.decorate,
         $.list,
         $.unit,
         $.operators,
@@ -28,6 +29,7 @@ module.exports = grammar({
     // ----- unit ----------------
     unit: ($) => seq($._unit, repeat(seq(".", choice($._unit, $.string)))),
 
+    decorate: ($) => seq("@", $.identifier),
     _unit: ($) => choice($.identifier, $.func),
 
     func: ($) => seq($.identifier, $.arg_block),

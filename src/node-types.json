@@ -47,6 +47,10 @@
           "named": true
         },
         {
+          "type": "decorate",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -86,6 +90,10 @@
           "named": true
         },
         {
+          "type": "decorate",
+          "named": true
+        },
+        {
           "type": "list",
           "named": true
         },
@@ -103,6 +111,21 @@
         },
         {
           "type": "unit",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "decorate",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
           "named": true
         }
       ]
@@ -188,6 +211,10 @@
         },
         {
           "type": "block",
+          "named": true
+        },
+        {
+          "type": "decorate",
           "named": true
         },
         {
@@ -298,6 +325,10 @@
   },
   {
     "type": "=",
+    "named": false
+  },
+  {
+    "type": "@",
     "named": false
   },
   {

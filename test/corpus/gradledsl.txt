@@ -2,18 +2,22 @@
 base
 ==========
 
-// Test
+/**
+ * Test
+ */
 
 version = '1.0.1'
 myCopyTask.description = 'Copies some files'
 
+// Add classes
 file("$buildDir/classes")
 
 println "Destination: ${myCopyTask.destinationDir}"
 
 ---
 (source_file
-  (comment)
+  (command
+    (block_comment))
   (command
     (unit
       (identifier))
@@ -25,6 +29,8 @@ println "Destination: ${myCopyTask.destinationDir}"
       (identifier))
     (operators)
     (string))
+  (comment
+    (line_comment))
   (command
     (unit
       (func
@@ -89,7 +95,8 @@ println 'Hello, World!'
       (func
         (identifier)
         (arg_block)))
-    (comment))
+    (comment
+      (line_comment)))
   (command
     (unit
       (func

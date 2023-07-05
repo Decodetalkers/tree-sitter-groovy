@@ -138,6 +138,11 @@ module.exports = grammar({
         )
       );
     },
-    comment: (_) => token(seq("//", /[^\n]+/g)),
+
+    comment: ($) => choice($.line_comment, $.block_comment),
+
+    line_comment: ($) => token(seq("//", /[^\n]*/)),
+
+    block_comment: ($) => token(seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/")),
   },
 });

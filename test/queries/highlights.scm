@@ -18,7 +18,7 @@
 (number) @number
 
 ((identifier) @boolean
-  (#any-of? @boolean "true" "false" "True" "False"))
+  (#any-of? @boolean "true" "false" "True" "False" "null"))
 
 ((identifier) @constant
   (#lua-match? @constant "^[A-Z][A-Z%d_]*$"))
@@ -27,6 +27,11 @@
   (#any-of? @type.definition
     "string"
     "String"
+    "Map"
+    "Object"
+    "Boolean"
+    "Integer"
+    "List"
     "void"
     "id"
     "version"
@@ -34,16 +39,34 @@
     "implementation"
     "testImplementation"
     "androidTestImplementation"
-    "debugImplementation")
-)
+    "debugImplementation"
+))
 
 ((identifier) @keyword
   (#any-of? @keyword
     "static"
+    "abstract"
+    "protected"
+    "private"
+    "public"
     "class"
     "def"
     "import"
+    "package"
+    "assert"
+    "extends"
+    "implements"
+    "instanceof"
+    "interface"
     "new"
+))
+
+((identifier) @exception
+  (#any-of? @exception
+    "throw"
+    "finally"
+    "try"
+    "catch"
 ))
 
 (string) @string

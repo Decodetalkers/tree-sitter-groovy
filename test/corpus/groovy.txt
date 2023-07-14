@@ -27,9 +27,8 @@ class Example {
 ---
 
 (source_file
+  (block_comment)
   (command
-    (block_comment))
-      (command
     (unit
       (identifier))
     (block
@@ -50,8 +49,7 @@ class Example {
                 (list)
                 (unit
                   (identifier)))))
-          (comment
-            (line_comment))
+          (line_comment)
           (command
             (unit
               (identifier))
@@ -66,8 +64,7 @@ class Example {
                 (arg_block
                   (unit
                     (identifier))))))
-          (comment
-            (line_comment))
+          (line_comment)
           (command
             (unit
               (identifier))
@@ -82,8 +79,7 @@ class Example {
                     (arg_block
                       (unit
                         (identifier))))))
-              (comment
-                (line_comment))
+              (line_comment)
               (command
                 (unit
                   (identifier))
@@ -98,8 +94,7 @@ class Example {
                     (arg_block
                       (unit
                         (identifier))))))
-              (comment
-                (line_comment))
+              (line_comment)
               (command
                 (unit
                   (identifier))

@@ -1,7 +1,7 @@
 //const base = require('./grammar/base');
 module.exports = grammar({
   name: "groovy",
-  extras: ($) => [$.comment, /\s/],
+  extras: ($) => [$.line_comment, $.block_comment, /\s/],
 
   rules: {
     source_file: ($) => repeat($.command),
@@ -141,8 +141,9 @@ module.exports = grammar({
 
     comment: ($) => choice($.line_comment, $.block_comment),
 
-    line_comment: ($) => token(seq("//", /[^\n]*/)),
+    line_comment: ($) => token(prec(0, seq("//", /[^\n]*/))),
 
-    block_comment: ($) => token(seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/")),
+    block_comment: ($) =>
+      token(prec(0, seq("/*", /[^*]*\*+([^/*][^*]*\*+)*/, "/"))),
   },
 });

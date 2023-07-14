@@ -16,8 +16,7 @@ println "Destination: ${myCopyTask.destinationDir}"
 
 ---
 (source_file
-  (command
-    (block_comment))
+  (block_comment)
   (command
     (unit
       (identifier))
@@ -29,8 +28,7 @@ println "Destination: ${myCopyTask.destinationDir}"
       (identifier))
     (operators)
     (string))
-  (comment
-    (line_comment))
+  (line_comment)
   (command
     (unit
       (func
@@ -95,8 +93,7 @@ println 'Hello, World!'
       (func
         (identifier)
         (arg_block)))
-    (comment
-      (line_comment)))
+    (line_comment))
   (command
     (unit
       (func

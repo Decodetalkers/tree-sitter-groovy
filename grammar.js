@@ -81,11 +81,11 @@ module.exports = grammar({
 
     _args: ($) =>
       seq(
-        choice($.string, $.unit, $.list, $.operators, $.arg_block),
+        choice($.string, $.unit, $.list, $.operators, $.arg_block, $.number),
         repeat(
           seq(
             optional($.arg_spliter),
-            choice($.string, $.unit, $.list, $.operators, $.arg_block)
+            choice($.string, $.unit, $.list, $.operators, $.arg_block, $.number)
           )
         )
       ),

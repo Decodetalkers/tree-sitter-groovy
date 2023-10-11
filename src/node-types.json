@@ -8,11 +8,19 @@
       "required": false,
       "types": [
         {
+          "type": "arg_block",
+          "named": true
+        },
+        {
           "type": "arg_spliter",
           "named": true
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "operators",
           "named": true
         },
         {
@@ -48,6 +56,10 @@
         },
         {
           "type": "decorate",
+          "named": true
+        },
+        {
+          "type": "end_command",
           "named": true
         },
         {
@@ -132,6 +144,49 @@
     }
   },
   {
+    "type": "end_command",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "arg_spliter",
+          "named": true
+        },
+        {
+          "type": "block",
+          "named": true
+        },
+        {
+          "type": "decorate",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "operators",
+          "named": true
+        },
+        {
+          "type": "string",
+          "named": true
+        },
+        {
+          "type": "unit",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "func",
     "named": true,
     "fields": {},
@@ -151,6 +206,32 @@
     }
   },
   {
+    "type": "generics_class",
+    "named": true,
+    "fields": {
+      "generics_type": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "list",
     "named": true,
     "fields": {},
@@ -159,11 +240,19 @@
       "required": false,
       "types": [
         {
+          "type": "arg_block",
+          "named": true
+        },
+        {
           "type": "arg_spliter",
           "named": true
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "operators",
           "named": true
         },
         {
@@ -265,6 +354,10 @@
           "named": true
         },
         {
+          "type": "generics_class",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         },
@@ -280,7 +373,19 @@
     "named": false
   },
   {
+    "type": "!",
+    "named": false
+  },
+  {
+    "type": "!=",
+    "named": false
+  },
+  {
     "type": "\"",
+    "named": false
+  },
+  {
+    "type": "&",
     "named": false
   },
   {
@@ -324,7 +429,15 @@
     "named": false
   },
   {
+    "type": "<",
+    "named": false
+  },
+  {
     "type": "=",
+    "named": false
+  },
+  {
+    "type": ">",
     "named": false
   },
   {
@@ -369,6 +482,10 @@
   },
   {
     "type": "{",
+    "named": false
+  },
+  {
+    "type": "|",
     "named": false
   },
   {

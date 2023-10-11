@@ -20,6 +20,10 @@
           "named": true
         },
         {
+          "type": "number",
+          "named": true
+        },
+        {
           "type": "operators",
           "named": true
         },
@@ -249,6 +253,10 @@
         },
         {
           "type": "list",
+          "named": true
+        },
+        {
+          "type": "number",
           "named": true
         },
         {

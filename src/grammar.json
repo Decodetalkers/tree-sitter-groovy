@@ -480,6 +480,10 @@
             {
               "type": "SYMBOL",
               "name": "arg_block"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "number"
             }
           ]
         },
@@ -522,6 +526,10 @@
                   {
                     "type": "SYMBOL",
                     "name": "arg_block"
+                  },
+                  {
+                    "type": "SYMBOL",
+                    "name": "number"
                   }
                 ]
               }

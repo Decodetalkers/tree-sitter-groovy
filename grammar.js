@@ -2,12 +2,20 @@
 module.exports = grammar({
   name: "groovy",
   extras: ($) => [$.line_comment, $.block_comment, /\s/],
-
+  conflicts: ($) => [[$._unit, $.func]],
   rules: {
     source_file: ($) => repeat($.command),
 
-    block: ($) => seq($._command_unit, "{", repeat($.command), "}"),
+    block: ($) =>
+      seq(
+        $._command_unit,
+        "{",
+        repeat($.command),
+        optional($.end_command),
+        "}"
+      ),
     command: ($) => seq(repeat1($._command_unit), choice("\n", ";")),
+    end_command: ($) => repeat1($._command_unit),
     _command_unit: ($) =>
       choice(
         $.decorate,
@@ -24,13 +32,16 @@ module.exports = grammar({
     // ---- leading_key -----
     leading_key: ($) => "$",
     // ---- operators ---------
-    operators: ($) => choice("+=", "=", "-=", "+", "-", "~", "->"),
+    operators: ($) =>
+      choice("+=", "=", "-=", "+", "-", "~", "->", "&", "|", "!=", "!"),
 
     // ----- unit ----------------
     unit: ($) => seq($._unit, repeat(seq(".", choice($._unit, $.string)))),
 
     decorate: ($) => seq("@", $.identifier),
-    _unit: ($) => choice($.identifier, $.func),
+    _unit: ($) => choice(choice($.identifier, $.generics_class), $.func),
+    generics_class: ($) =>
+      seq($.identifier, "<", field("generics_type", $.identifier), ">"),
 
     func: ($) => seq($.identifier, $.arg_block),
 
@@ -70,8 +81,13 @@ module.exports = grammar({
 
     _args: ($) =>
       seq(
-        choice($.string, $.unit, $.list),
-        repeat(seq(optional($.arg_spliter), choice($.string, $.unit, $.list)))
+        choice($.string, $.unit, $.list, $.operators, $.arg_block),
+        repeat(
+          seq(
+            optional($.arg_spliter),
+            choice($.string, $.unit, $.list, $.operators, $.arg_block)
+          )
+        )
       ),
     // NOTE: both boolean ,type, def and valuename
     // and fucntionname, is the base type

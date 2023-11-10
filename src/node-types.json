@@ -39,6 +39,11 @@
     }
   },
   {
+    "type": "arg_spliter",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "block",
     "named": true,
     "fields": {},
@@ -421,6 +426,10 @@
     "named": false
   },
   {
+    "type": ",",
+    "named": false
+  },
+  {
     "type": "-",
     "named": false
   },
@@ -434,6 +443,10 @@
   },
   {
     "type": ".",
+    "named": false
+  },
+  {
+    "type": ":",
     "named": false
   },
   {
@@ -463,10 +476,6 @@
   {
     "type": "]",
     "named": false
-  },
-  {
-    "type": "arg_spliter",
-    "named": true
   },
   {
     "type": "block_comment",

@@ -43,7 +43,7 @@ module.exports = grammar({
     generics_class: ($) =>
       seq($.identifier, "<", field("generics_type", $.identifier), ">"),
 
-    func: ($) => seq($.identifier, $.arg_block),
+    func: ($) => seq(choice($.identifier, $.generics_class), $.arg_block),
 
     arg_block: ($) => seq("(", optional($._args), ")"),
     // ------------ string -------------

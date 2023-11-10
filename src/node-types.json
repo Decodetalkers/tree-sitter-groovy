@@ -203,6 +203,10 @@
           "named": true
         },
         {
+          "type": "generics_class",
+          "named": true
+        },
+        {
           "type": "identifier",
           "named": true
         }

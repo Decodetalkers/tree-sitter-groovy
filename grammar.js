@@ -28,7 +28,7 @@ module.exports = grammar({
         $.block
       ),
     // ---- split the args -----
-    arg_spliter: ($) => ",",
+    arg_spliter: ($) => choice(",", ":"),
     // ---- leading_key -----
     leading_key: ($) => "$",
     // ---- operators ---------

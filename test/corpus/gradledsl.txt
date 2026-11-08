@@ -82,7 +82,7 @@ println 'Hello, World!'
       (identifier)
       (identifier))
     (string)
-    (arg_spliter)
+    (arg_splitter)
     (string))
   (command
     (unit

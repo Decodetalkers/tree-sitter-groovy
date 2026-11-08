@@ -24,11 +24,11 @@ module.exports = grammar({
         $.operators,
         $.string,
         $.number,
-        $.arg_spliter,
+        $.arg_splitter,
         $.block
       ),
     // ---- split the args -----
-    arg_spliter: ($) => choice(",", ":"),
+    arg_splitter: ($) => choice(",", ":"),
     // ---- leading_key -----
     leading_key: ($) => "$",
     // ---- operators ---------
@@ -84,7 +84,7 @@ module.exports = grammar({
         choice($.string, $.unit, $.list, $.operators, $.arg_block, $.number),
         repeat(
           seq(
-            optional($.arg_spliter),
+            optional($.arg_splitter),
             choice($.string, $.unit, $.list, $.operators, $.arg_block, $.number)
           )
         )
@@ -134,7 +134,7 @@ module.exports = grammar({
         ),
         seq(".", decimal_digits, optional(exponent_part)),
         seq(decimal_integer_literal, exponent_part),
-        seq(decimal_digits)
+        decimal_digits
       );
 
       return token(

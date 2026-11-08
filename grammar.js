@@ -12,7 +12,7 @@ module.exports = grammar({
         "{",
         repeat($.command),
         optional($.end_command),
-        "}"
+        "}",
       ),
     command: ($) => seq(repeat1($._command_unit), choice("\n", ";")),
     end_command: ($) => repeat1($._command_unit),
@@ -25,7 +25,7 @@ module.exports = grammar({
         $.string,
         $.number,
         $.arg_splitter,
-        $.block
+        $.block,
       ),
     // ---- split the args -----
     arg_splitter: ($) => choice(",", ":"),
@@ -53,10 +53,10 @@ module.exports = grammar({
           "'",
           optional(
             repeat(
-              choice(token.immediate(prec(1, /[^'\\]+/)), $.escape_sequence)
-            )
+              choice(token.immediate(prec(1, /[^'\\]+/)), $.escape_sequence),
+            ),
           ),
-          "'"
+          "'",
         ),
         seq(
           '"',
@@ -67,13 +67,13 @@ module.exports = grammar({
                 $.escape_sequence,
                 seq(
                   $.leading_key,
-                  choice($.identifier, seq("{", $._command_unit, "}"))
-                )
-              )
-            )
+                  choice($.identifier, seq("{", $._command_unit, "}")),
+                ),
+              ),
+            ),
           ),
-          '"'
-        )
+          '"',
+        ),
       ),
 
     // ---------- list -----------------
@@ -85,9 +85,16 @@ module.exports = grammar({
         repeat(
           seq(
             optional($.arg_splitter),
-            choice($.string, $.unit, $.list, $.operators, $.arg_block, $.number)
-          )
-        )
+            choice(
+              $.string,
+              $.unit,
+              $.list,
+              $.operators,
+              $.arg_block,
+              $.number,
+            ),
+          ),
+        ),
       ),
     // NOTE: both boolean ,type, def and valuename
     // and fucntionname, is the base type
@@ -97,8 +104,13 @@ module.exports = grammar({
       token.immediate(
         seq(
           "\\",
-          choice(/[^xu0-7]/, /[0-7]{1,3}/, /x[0-9a-fA-F]{2}/, /u[0-9a-fA-F]{4}/)
-        )
+          choice(
+            /[^xu0-7]/,
+            /[0-7]{1,3}/,
+            /x[0-9a-fA-F]{2}/,
+            /u[0-9a-fA-F]{4}/,
+          ),
+        ),
       ),
     number: ($) => {
       const hex_literal = seq(choice("0x", "0X"), /[\da-fA-F](_?[\da-fA-F])*/);
@@ -113,7 +125,7 @@ module.exports = grammar({
 
       const bigint_literal = seq(
         choice(hex_literal, binary_literal, octal_literal, decimal_digits),
-        "n"
+        "n",
       );
 
       const decimal_integer_literal = choice(
@@ -121,8 +133,8 @@ module.exports = grammar({
         seq(
           optional("0"),
           /[1-9]/,
-          optional(seq(optional("_"), decimal_digits))
-        )
+          optional(seq(optional("_"), decimal_digits)),
+        ),
       );
 
       const decimal_literal = choice(
@@ -130,11 +142,11 @@ module.exports = grammar({
           decimal_integer_literal,
           ".",
           optional(decimal_digits),
-          optional(exponent_part)
+          optional(exponent_part),
         ),
         seq(".", decimal_digits, optional(exponent_part)),
         seq(decimal_integer_literal, exponent_part),
-        decimal_digits
+        decimal_digits,
       );
 
       return token(
@@ -145,8 +157,8 @@ module.exports = grammar({
           decimal_literal,
           binary_literal,
           octal_literal,
-          bigint_literal
-        )
+          bigint_literal,
+        ),
       );
     },
 

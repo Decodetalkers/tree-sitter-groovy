@@ -21,6 +21,7 @@ jobs:
         run: |
           npm install
           npm run build
+          npm run gyp_build
       - name: Run lint
         run: |
           npm run lint

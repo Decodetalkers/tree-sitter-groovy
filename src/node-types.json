@@ -12,7 +12,7 @@
           "named": true
         },
         {
-          "type": "arg_spliter",
+          "type": "arg_splitter",
           "named": true
         },
         {
@@ -39,7 +39,7 @@
     }
   },
   {
-    "type": "arg_spliter",
+    "type": "arg_splitter",
     "named": true,
     "fields": {}
   },
@@ -52,7 +52,7 @@
       "required": true,
       "types": [
         {
-          "type": "arg_spliter",
+          "type": "arg_splitter",
           "named": true
         },
         {
@@ -103,7 +103,7 @@
       "required": true,
       "types": [
         {
-          "type": "arg_spliter",
+          "type": "arg_splitter",
           "named": true
         },
         {
@@ -161,7 +161,7 @@
       "required": true,
       "types": [
         {
-          "type": "arg_spliter",
+          "type": "arg_splitter",
           "named": true
         },
         {
@@ -257,7 +257,7 @@
           "named": true
         },
         {
-          "type": "arg_spliter",
+          "type": "arg_splitter",
           "named": true
         },
         {
@@ -296,6 +296,7 @@
   {
     "type": "source_file",
     "named": true,
+    "root": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -321,7 +322,7 @@
       "required": false,
       "types": [
         {
-          "type": "arg_spliter",
+          "type": "arg_splitter",
           "named": true
         },
         {
@@ -471,6 +472,10 @@
     "named": false
   },
   {
+    "type": "<<",
+    "named": false
+  },
+  {
     "type": "=",
     "named": false
   },
@@ -492,7 +497,8 @@
   },
   {
     "type": "block_comment",
-    "named": true
+    "named": true,
+    "extra": true
   },
   {
     "type": "escape_sequence",
@@ -508,7 +514,8 @@
   },
   {
     "type": "line_comment",
-    "named": true
+    "named": true,
+    "extra": true
   },
   {
     "type": "number",

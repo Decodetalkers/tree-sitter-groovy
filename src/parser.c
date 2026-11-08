@@ -4112,7 +4112,7 @@ TS_PUBLIC const TSLanguage *tree_sitter_groovy(void) {
     .metadata = {
       .major_version = 0,
       .minor_version = 0,
-      .patch_version = 1,
+      .patch_version = 2,
     },
   };
   return &language;

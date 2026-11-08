@@ -9,7 +9,7 @@
     "format": "prettier --write grammar.js",
     "build": "tree-sitter generate",
     "test": "tree-sitter test",
-    "install": "node-gyp-build",
+    "gyp_build": "node-gyp-build",
     "prebuildify": "prebuildify --napi --strip"
   },
   "keywords": [],

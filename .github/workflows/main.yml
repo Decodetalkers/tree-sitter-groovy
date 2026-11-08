@@ -34,9 +34,11 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2.4.0
       - name: Install Dependencies
-        run: npm install
+        run: |
+          npm install
+          npm run build
+          npm run gyp_build
 
       - name: Run tests
         run: |
-          npm run build
           npm run test

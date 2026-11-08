@@ -189,3 +189,46 @@ include ':app'
     (unit
       (identifier))
     (string)))
+
+==========
+left shift operator
+==========
+
+compileJava {
+    options.compilerArgs << '-parameters'
+}
+task hello << {
+    println 'hi'
+}
+x = 1 << 2
+
+---
+(source_file
+  (command
+    (block
+      (unit
+        (identifier))
+      (command
+        (unit
+          (identifier)
+          (identifier))
+        (operators)
+        (string))))
+  (command
+    (unit
+      (identifier))
+    (unit
+      (identifier))
+    (block
+      (operators)
+      (command
+        (unit
+          (identifier))
+        (string))))
+  (command
+    (unit
+      (identifier))
+    (operators)
+    (number)
+    (operators)
+    (number)))

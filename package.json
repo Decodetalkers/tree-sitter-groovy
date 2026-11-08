@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-groovy",
-  "version": "0.1.0",
+  "version": "0.0.2",
   "description": "A tree-sitter for groovy dsl",
   "main": "bindings/node",
   "types": "bindings/node",

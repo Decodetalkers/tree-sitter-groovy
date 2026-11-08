@@ -33,7 +33,7 @@ module.exports = grammar({
     leading_key: ($) => "$",
     // ---- operators ---------
     operators: ($) =>
-      choice("+=", "=", "-=", "+", "-", "~", "->", "&", "|", "!=", "!"),
+      choice("+=", "=", "-=", "+", "-", "~", "->", "&", "|", "!=", "!", "<<"),
 
     // ----- unit ----------------
     unit: ($) => seq($._unit, repeat(seq(".", choice($._unit, $.string)))),
